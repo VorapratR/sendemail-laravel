@@ -64,7 +64,7 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+    <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -78,21 +78,29 @@
                     @endauth
                 </div>
             @endif
+            <div class="content" sty>
+                    <div class="title m-b-md">
+                        5910110288
+                    </div>
+                    <h1>Send Email Service</h1>
+                    <div class="flex-center"> 
+                        <?php
+                            echo Form::open(array('url' => '/sendhtmlemail'));
+                        ?>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                        อีเมลผู้รับ <textarea name="email" rows="1.5"><?php Form::text('email')?></textarea>
+                        <br>
+                        ชื่อ <textarea name="email" rows="1.5"><?php Form::text('user')?></textarea>
+                        <br>
+                        หัวข้อ <textarea name="subject" rows="1.5"><?php Form::text('subject')?></textarea>
+                        <br>
+                        ข้อความ <textarea name="content" rows="5"><?php Form::text('content')?></textarea>
+                        <br>
+                        <?php  
+                        echo Form :: submit('ส่ง'); 
+                        echo Form :: close();
+                        ?>
+                    </div>
             </div>
         </div>
     </body>
