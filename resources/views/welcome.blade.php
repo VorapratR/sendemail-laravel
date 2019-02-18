@@ -63,42 +63,39 @@
             }
         </style>
     </head>
-    <body>
-    <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+    <nav class="navbar navbar-dark bg-dark">
+         <a class="navbar-brand" href="/"><i class="fas fa-mail-bulk"></i> Send Email System</a>
+         <ul class="navbar-nav ml-auto">
+         <li class="nav-item">
+            <span>นายวรปรัชญ์ รัตนะ</span>
+            <span>5910110288</span>
+            <span>section 02</span>
+         </li>
+         </a>
+      </nav>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    <body>
+    <div class="flex-center position-ref full-height" style="background-color:LightGreen;">
+           
             <div class="content" sty>
+            
                     <div class="title m-b-md">
                         5910110288
                     </div>
-                    <h1>Send Email Service</h1>
                     <div class="flex-center"> 
                         <?php
                             echo Form::open(array('url' => '/sendhtmlemail'));
                         ?>
 
-                        อีเมลผู้รับ <textarea name="email" rows="1.5"><?php Form::text('email')?></textarea>
+                        Email:   <textarea name="email" cols="50" rows="1.5"><?php Form::text('email')?></textarea>
+                        Name:    <textarea name="email" cols="50" rows="1.5"><?php Form::text('user')?></textarea>
+                        Subject: <textarea name="subject" cols="50" rows="1.5"><?php Form::text('subject')?></textarea>
                         <br>
-                        ชื่อ <textarea name="email" rows="1.5"><?php Form::text('user')?></textarea>
+                        Content: <textarea name="content"cols="50" rows="5"><?php Form::text('content')?></textarea>
                         <br>
-                        หัวข้อ <textarea name="subject" rows="1.5"><?php Form::text('subject')?></textarea>
-                        <br>
-                        ข้อความ <textarea name="content" rows="5"><?php Form::text('content')?></textarea>
-                        <br>
-                        <?php  
-                        echo Form :: submit('ส่ง'); 
-                        echo Form :: close();
+                        <?php   
+                            echo Form :: submit('Submit'); 
+                            echo Form :: close();
                         ?>
                     </div>
             </div>
